@@ -13,7 +13,11 @@ public class Room extends BasePersistable{
 	@NotNull
 	@Column(name = "name", nullable = false, length = 255)
 	private String name;
+	@NotNull
+	@Column(name = "building", nullable = false, length = 255)
 	private String building;
+	@NotNull
+	@Column(name = "floor", nullable = false, length = 255)
 	private String floor;
 	
 	public String getName() {
