@@ -15,6 +15,8 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import at.guelcehre.hospital.Ensure;
+
 @Entity
 @Inheritance
 @DiscriminatorColumn(name="persons_type")
@@ -48,4 +50,72 @@ public class Person extends BasePersistable{
     @NotNull
     @Column(name = "zip", nullable = false, length = 255)
     private String zip;
+
+	public Person(String name, Date birthDate, boolean isMan,
+			String telephoneNumber, String address, String zip) {
+		super();
+		Ensure.notEmpty("name", name);
+		Ensure.notEmpty("telephone_number", telephoneNumber);
+		Ensure.notEmpty("address", address);
+		Ensure.notEmpty("zip", zip);
+		this.name = name;
+		this.birthDate = birthDate;
+		this.isMan = isMan;
+		this.telephoneNumber = telephoneNumber;
+		this.address = address;
+		this.zip = zip;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public boolean isMan() {
+		return isMan;
+	}
+
+	public void setMan(boolean isMan) {
+		this.isMan = isMan;
+	}
+
+	public String getTelephoneNumber() {
+		return telephoneNumber;
+	}
+
+	public void setTelephoneNumber(String telephoneNumber) {
+		this.telephoneNumber = telephoneNumber;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getZip() {
+		return zip;
+	}
+
+	public void setZip(String zip) {
+		this.zip = zip;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+    
 }

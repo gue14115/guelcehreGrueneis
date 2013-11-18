@@ -11,6 +11,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import at.guelcehre.hospital.Ensure;
+
 @Entity
 @Table(name = "operations")
 public class Operation extends BasePersistable{
@@ -29,16 +31,84 @@ public class Operation extends BasePersistable{
 	@Column(name = "estimated_length_in_hours", nullable = false, length = 255)
 	private int estimatedLengthInHours;
 	
+	@NotNull
 	@OneToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="patient")
 	private Patient patient;
 	
+	@NotNull
 	@OneToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="doctor")
 	private Doctor doctor;
 	
+	@NotNull
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="room")
 	private Room room;
+
+	public Operation(GregorianCalendar start, GregorianCalendar end,
+			int estimatedLengthInHours, Patient patient, Doctor doctor,
+			Room room) {
+		super();
+		this.start = start;
+		this.end = end;
+		this.estimatedLengthInHours = estimatedLengthInHours;
+		this.patient = patient;
+		this.doctor = doctor;
+		this.room = room;
+	}
+
+	public GregorianCalendar getStart() {
+		return start;
+	}
+
+	public void setStart(GregorianCalendar start) {
+		this.start = start;
+	}
+
+	public GregorianCalendar getEnd() {
+		return end;
+	}
+
+	public void setEnd(GregorianCalendar end) {
+		this.end = end;
+	}
+
+	public int getEstimatedLengthInHours() {
+		return estimatedLengthInHours;
+	}
+
+	public void setEstimatedLengthInHours(int estimatedLengthInHours) {
+		this.estimatedLengthInHours = estimatedLengthInHours;
+	}
+
+	public Patient getPatient() {
+		return patient;
+	}
+
+	public void setPatient(Patient patient) {
+		this.patient = patient;
+	}
+
+	public Doctor getDoctor() {
+		return doctor;
+	}
+
+	public void setDoctor(Doctor doctor) {
+		this.doctor = doctor;
+	}
+
+	public Room getRoom() {
+		return room;
+	}
+
+	public void setRoom(Room room) {
+		this.room = room;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 
 }
