@@ -19,10 +19,10 @@ import at.guelcehre.hospital.Ensure;
 @DiscriminatorColumn(name="persons_type")
 @Table(name="persons")
 public class Person extends BasePersistable{
-	
-	private static final long serialVersionUID = -1894844304628938112L;
 
-	@Size(max = 255)
+    private static final long serialVersionUID = -1894844304628938112L;
+
+    @Size(max = 255)
     @NotNull
     @Column(name = "name", nullable = false, length = 255)
     private String name;
@@ -31,88 +31,87 @@ public class Person extends BasePersistable{
     @NotNull
     @Column(name = "birth_date", nullable = false)
     private Date birthDate;
-    
+
     @NotNull
     @Column(name = "is_man", nullable = false, length = 255)
     private boolean isMan;
-    
+
     @NotNull
     @Column(name = "telephone_number", nullable = false, length = 255)
     private String telephoneNumber;
-    
+
     @NotNull
     @Column(name = "address", nullable = false, length = 255)
     private String address;
-    
+
     @NotNull
     @Column(name = "zip", nullable = false, length = 255)
     private String zip;
 
-	public Person(String name, Date birthDate, boolean isMan,
-			String telephoneNumber, String address, String zip) {
-		super();
-		Ensure.notEmpty("name", name);
-		Ensure.notEmpty("telephone_number", telephoneNumber);
-		Ensure.notEmpty("address", address);
-		Ensure.notEmpty("zip", zip);
-		this.name = name;
-		this.birthDate = birthDate;
-		this.isMan = isMan;
-		this.telephoneNumber = telephoneNumber;
-		this.address = address;
-		this.zip = zip;
-	}
+    public Person(String name, Date birthDate, boolean isMan,
+                  String telephoneNumber, String address, String zip) {
+        super();
+        Ensure.notEmpty("name", name);
+        Ensure.notEmpty("telephone_number", telephoneNumber);
+        Ensure.notEmpty("address", address);
+        Ensure.notEmpty("zip", zip);
+        this.name = name;
+        this.birthDate = birthDate;
+        this.isMan = isMan;
+        this.telephoneNumber = telephoneNumber;
+        this.address = address;
+        this.zip = zip;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public Date getBirthDate() {
-		return birthDate;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
+    public Date getBirthDate() {
+        return birthDate;
+    }
 
-	public boolean isMan() {
-		return isMan;
-	}
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
 
-	public void setMan(boolean isMan) {
-		this.isMan = isMan;
-	}
+    public boolean isMan() {
+        return isMan;
+    }
 
-	public String getTelephoneNumber() {
-		return telephoneNumber;
-	}
+    public void setMan(boolean isMan) {
+        this.isMan = isMan;
+    }
 
-	public void setTelephoneNumber(String telephoneNumber) {
-		this.telephoneNumber = telephoneNumber;
-	}
+    public String getTelephoneNumber() {
+        return telephoneNumber;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public void setTelephoneNumber(String telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public String getZip() {
-		return zip;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public void setZip(String zip) {
-		this.zip = zip;
-	}
+    public String getZip() {
+        return zip;
+    }
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-    
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
 }

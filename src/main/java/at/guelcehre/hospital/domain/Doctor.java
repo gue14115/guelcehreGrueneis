@@ -15,36 +15,36 @@ public class Doctor extends Person{
 
     @NotNull
     @Column(name = "qualification", nullable = false)
-	private String qualification;
-	
+    private String qualification;
+
     @NotNull
     @Column(name = "specialization", nullable = false)
-	private String specialization;
-    
+    private String specialization;
 
-	public Doctor(String name, Date birthDate, boolean isMan,
-			String telephoneNumber, String address, String zip,
-			String qualification, String specialization) {
-		super(name, birthDate, isMan, telephoneNumber, address, zip);
-		Ensure.notEmpty("qualification", qualification);
-		Ensure.notEmpty("specialization", specialization);
-		this.qualification = qualification;
-		this.specialization = specialization;
-	}
 
-	public String getQualification() {
-		return qualification;
-	}
+    public Doctor(String name, Date birthDate, boolean isMan,
+                  String telephoneNumber, String address, String zip,
+                  String qualification, String specialization) {
+        super(name, birthDate, isMan, telephoneNumber, address, zip);
+        Ensure.notEmpty("qualification", qualification);
+        Ensure.notEmpty("specialization", specialization);
+        this.qualification = qualification;
+        this.specialization = specialization;
+    }
 
-	public void setQualification(String qualification) {
-		this.qualification = qualification;
-	}
+    public String getQualification() {
+        return qualification;
+    }
 
-	public String getSpecialization() {
-		return specialization;
-	}
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
+    }
 
-	public void setSpecialization(String specialization) {
-		this.specialization = specialization;
-	}
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
 }
