@@ -21,6 +21,9 @@ public class Doctor extends Person{
     @Column(name = "specialization", nullable = false)
     private String specialization;
 
+    public Doctor(){
+        // required for JPA
+    }
 
     public Doctor(String name, Date birthDate, boolean isMan,
                   String telephoneNumber, String address, String zip,

@@ -17,6 +17,9 @@ public class Patient extends Person{
     @Column(name = "sickness", nullable = false)
     private String sickness;
 
+    public Patient(){
+        // required for JPA
+    }
 
     public Patient(String name, Date birthDate, boolean isMan,
                    String telephoneNumber, String address, String zip, String sickness) {

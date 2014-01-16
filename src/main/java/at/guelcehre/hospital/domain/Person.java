@@ -48,6 +48,10 @@ public class Person extends BasePersistable{
     @Column(name = "zip", nullable = false, length = 255)
     private String zip;
 
+    public Person(){
+        // required for JPA
+    }
+
     public Person(String name, Date birthDate, boolean isMan,
                   String telephoneNumber, String address, String zip) {
         super();

@@ -46,10 +46,19 @@ public class Operation extends BasePersistable{
     @JoinColumn(name="room")
     private Room room;
 
+    public Operation(){
+        // required for JPA
+    }
     public Operation(GregorianCalendar start, GregorianCalendar end,
                      int estimatedLengthInHours, Patient patient, Doctor doctor,
                      Room room) {
         super();
+        Ensure.notNull("start",start);
+        Ensure.notNull("end",end);
+        Ensure.notNull("estimated_length_in_hours",estimatedLengthInHours);
+        Ensure.notNull("patient",patient);
+        Ensure.notNull("doctor",doctor);
+        Ensure.notNull("room",room);
         this.start = start;
         this.end = end;
         this.estimatedLengthInHours = estimatedLengthInHours;

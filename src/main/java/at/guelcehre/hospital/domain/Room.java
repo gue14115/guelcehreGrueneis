@@ -1,5 +1,7 @@
 package at.guelcehre.hospital.domain;
 
+import at.guelcehre.hospital.Ensure;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -24,6 +26,23 @@ public class Room extends BasePersistable{
     @OneToOne (fetch = FetchType.LAZY)
     @JoinColumn (name = "doctor")
     private Doctor doctor;
+
+    public Room(){
+        // required for JPA
+    }
+
+    public Room(String name, String building, String floor, Patient patient, Doctor doctor){
+        Ensure.notEmpty("name", name);
+        Ensure.notEmpty("building",building);
+        Ensure.notEmpty("floor",floor);
+        Ensure.notNull("patient", patient);
+        Ensure.notNull("doctor", doctor);
+        this.name = name;
+        this.building = building;
+        this.floor = floor;
+        this.patient = patient;
+        this.doctor = doctor;
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
