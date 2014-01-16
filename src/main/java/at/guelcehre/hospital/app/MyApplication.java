@@ -1,5 +1,7 @@
 package at.guelcehre.hospital.app;
 
+import at.guelcehre.hospital.repositoryjpa.PersistenceFactory;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -13,14 +15,14 @@ public class MyApplication {
 
     private EntityManager entityManager;
 
-    //private PersistenceFactory persistenceFactory;
+    private PersistenceFactory persistenceFactory;
 
     //private ServiceJpaFactory serviceFactory;
 
     public MyApplication() {
         entityManagerFactory = Persistence.createEntityManagerFactory("spengergassePU");
         entityManager = entityManagerFactory.createEntityManager();
-        //persistenceFactory = new PersistenceFactoryImpl(entityManager);
+        persistenceFactory = new PersistenceFactoryImpl(entityManager);
         //serviceFactory = new ServiceFactoryImpl(persistenceFactory);
     }
 
