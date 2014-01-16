@@ -34,9 +34,8 @@ public class RoomTest {
 
 	@Test
 	public void test() {
-        //(String name, String building, String floor, Patient patient, Doctor doctor)
         Room room = new Room("Operationroom 7","1","2",new Patient(),new Doctor());
-        entityManager.persist(room);
+        //entityManager.persist(room);
 	}
 
 }

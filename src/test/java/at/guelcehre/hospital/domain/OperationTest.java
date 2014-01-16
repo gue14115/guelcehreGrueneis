@@ -36,7 +36,7 @@ public class OperationTest {
 	@Test
 	public void test() {
         Operation operation = new Operation(new GregorianCalendar(),new GregorianCalendar(),1,new Patient(),new Doctor(),new Room());
-        entityManager.persist(operation);
+        //entityManager.persist(operation);
 	}
 
 }

@@ -38,7 +38,7 @@ public class DoctorTest {
 	public void test() {
         Date d = new Date();
         Doctor doctor = new Doctor("Anil",d,true,"100000","Joseph 7","1120 Wien","Everything","Neurology");
-        entityManager.persist(doctor);
+        //entityManager.persist(doctor);
 	}
 
 }

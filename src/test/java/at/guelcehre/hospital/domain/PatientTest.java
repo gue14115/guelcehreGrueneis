@@ -36,7 +36,7 @@ public class PatientTest {
 	@Test
 	public void test() {
         Patient patient = new Patient("Abi",new Date(), true, "666", "Stachegasse 7","1120 Wien","Influenza");
-        entityManager.persist(patient);
+        //entityManager.persist(patient);
 	}
 
 }
