@@ -9,6 +9,7 @@ import org.junit.Test;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class OperationTest {
@@ -35,8 +36,15 @@ public class OperationTest {
 
 	@Test
 	public void test() {
-        Operation operation = new Operation(new GregorianCalendar(),new GregorianCalendar(),1,new Patient(),new Doctor(),new Room());
-        //entityManager.persist(operation);
+        Date d = new Date();
+        Patient patient = new Patient("Abi",new Date(), true, "666", "Stachegasse 7","1120 Wien","Influenza");
+        Doctor doctor = new Doctor("Anil",d,true,"100000","Joseph 7","1120 Wien","Everything","Neurology");
+        Room room = new Room("Operationroom 7","1","2",patient,doctor);
+        Operation operation = new Operation(new GregorianCalendar(),new GregorianCalendar(),1,patient,doctor,room);
+        entityManager.persist(patient);
+        entityManager.persist(doctor);
+        entityManager.persist(room);
+        entityManager.persist(operation);
 	}
 
 }

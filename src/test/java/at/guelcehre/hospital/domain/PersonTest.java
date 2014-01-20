@@ -36,7 +36,7 @@ public class PersonTest {
 	@Test
 	public void test() {
         Person person = new Person("Maria Hasler",new Date(),false,"213123","Gumpendorferstrasse 21","1060 Wien");
-        //entityManager.persist(person);
+        entityManager.persist(person);
 	}
 
 }

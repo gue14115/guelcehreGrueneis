@@ -9,6 +9,7 @@ import org.junit.Test;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.util.Date;
 
 public class RoomTest {
     private EntityManagerFactory entityManagerFactory;
@@ -34,8 +35,13 @@ public class RoomTest {
 
 	@Test
 	public void test() {
-        Room room = new Room("Operationroom 7","1","2",new Patient(),new Doctor());
-        //entityManager.persist(room);
+        Date d = new Date();
+        Patient patient = new Patient("Abi",new Date(), true, "666", "Stachegasse 7","1120 Wien","Influenza");
+        Doctor doctor = new Doctor("Anil",d,true,"100000","Joseph 7","1120 Wien","Everything","Neurology");
+        Room room = new Room("Operationroom 7","1","2",patient,doctor);
+        entityManager.persist(patient);
+        entityManager.persist(doctor);
+        entityManager.persist(room);
 	}
 
 }

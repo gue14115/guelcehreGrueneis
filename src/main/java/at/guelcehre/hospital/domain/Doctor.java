@@ -13,12 +13,10 @@ import at.guelcehre.hospital.Ensure;
 @DiscriminatorValue("D")
 public class Doctor extends Person{
 
-    @NotNull
-    @Column(name = "qualification", nullable = false)
+    @Column(name = "qualification")
     private String qualification;
 
-    @NotNull
-    @Column(name = "specialization", nullable = false)
+    @Column(name = "specialization")
     private String specialization;
 
     public Doctor(){

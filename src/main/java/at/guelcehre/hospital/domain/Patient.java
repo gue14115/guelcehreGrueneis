@@ -13,8 +13,7 @@ import at.guelcehre.hospital.Ensure;
 @Entity
 @DiscriminatorValue("P")
 public class Patient extends Person{
-    @NotNull
-    @Column(name = "sickness", nullable = false)
+    @Column(name = "sickness")
     private String sickness;
 
     public Patient(){
