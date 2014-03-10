@@ -1,7 +1,7 @@
 package at.guelcehre.hospital.app;
 
 import at.guelcehre.hospital.repositoryjpa.PersistenceFactory;
-import at.guelcehre.hospital.servicejpa.HospitalManagmentServiceJpa;
+import at.guelcehre.hospital.servicejpa.HospitalManagementServiceJpa;
 import at.guelcehre.hospital.servicejpa.ServiceJpa;
 import at.guelcehre.hospital.servicejpa.ServiceJpaFactory;
 
@@ -21,8 +21,8 @@ private PersistenceFactory persistenceFactory;
     }
 
     @Override
-    public HospitalManagmentServiceJpa hospitalManagmentServiceJpa(){
-        HospitalManagmentServiceJpa hospitalManagmentServiceJpa = new HospitalManagmentServiceJpa();
+    public HospitalManagementServiceJpa hospitalManagmentServiceJpa(){
+        HospitalManagementServiceJpa hospitalManagmentServiceJpa = new HospitalManagementServiceJpa();
         hospitalManagmentServiceJpa.setDoctorJpaRepository(persistenceFactory.doctorJpaRepository());
         hospitalManagmentServiceJpa.setOperationJpaRepository(persistenceFactory.operationJpaRepository());
         hospitalManagmentServiceJpa.setPatientJpaRepository(persistenceFactory.patientJpaRepository());

@@ -2,11 +2,13 @@ package at.guelcehre.hospital.servicejpa;
 
 import at.guelcehre.hospital.repositoryjpa.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * All uses cases for the timetable management.
  */
-public class HospitalManagmentServiceJpa implements  ServiceJpa{
+@Service
+public class HospitalManagementServiceJpa {
 
     @Autowired
     private DoctorJpaRepository doctorJpaRepository;

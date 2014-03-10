@@ -5,5 +5,5 @@ package at.guelcehre.hospital.servicejpa;
  * e.g. Spring.
  */
 public interface ServiceJpaFactory {
-    HospitalManagmentServiceJpa hospitalManagmentServiceJpa();
+    HospitalManagementServiceJpa hospitalManagmentServiceJpa();
 }
