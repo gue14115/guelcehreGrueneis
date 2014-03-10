@@ -1,20 +1,24 @@
-package at.guelcehre.hospital.domain;
+package at.guelcehre.hospital.repositoryjpa;
 
-import static org.junit.Assert.*;
-
-import at.guelcehre.hospital.domain.Patient;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.util.Date;
 
-public class PatientTest {
-    private EntityManagerFactory entityManagerFactory;
-    private EntityManager entityManager;
+/**
+ * Created by anil on 24/02/14.
+ */
+public class AbstractJpaRepositoryTest {
+
+    protected final Logger logger = LoggerFactory.getLogger(getClass());
+
+    protected EntityManagerFactory entityManagerFactory;
+
+    protected EntityManager entityManager;
 
     @Before
     public void setup() {
@@ -33,11 +37,4 @@ public class PatientTest {
         if (entityManagerFactory != null)
             entityManagerFactory.close();
     }
-
-	@Test
-	public void test() {
-        Patient patient = new Patient("Abi",new Date(), true, "666", "Stachegasse 7","1120 Wien","Influenza");
-        entityManager.persist(patient);
-	}
-
 }

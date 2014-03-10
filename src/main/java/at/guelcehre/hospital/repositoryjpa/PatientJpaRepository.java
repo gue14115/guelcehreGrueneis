@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public class PatientJpaRepository extends AbstractJpaRepository<Patient>{
     public List<Patient> findAll(){
-        return entityManager().createQuery("SELECT pa FROM Doctor pa", Patient.class).getResultList();
+        return entityManager().createQuery("SELECT pa FROM Patient pa", Patient.class).getResultList();
     }
     public Patient findById(Long id){
         return entityManager().find(Patient.class,id);

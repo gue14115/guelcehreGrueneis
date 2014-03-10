@@ -2,6 +2,7 @@ package at.guelcehre.hospital.domain;
 
 import static org.junit.Assert.*;
 
+import at.guelcehre.hospital.domain.Doctor;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
