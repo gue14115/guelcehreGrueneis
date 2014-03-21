@@ -1,5 +1,6 @@
 package at.guelcehre.hospital.rest;
 
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.http.MediaType;
@@ -27,4 +28,11 @@ public class DoctorApiTest {
     @Resource
     private WebApplicationContext webApplicationContext;
 
+    @Test
+    public void readFromEmptyListOfDoctors() throws Exception {
+    }
+
+    @Test
+    public void insertNewDoctor() throws Exception {
+    }
 }
