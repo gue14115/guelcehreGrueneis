@@ -30,9 +30,23 @@ public class DoctorApiTest {
 
     @Test
     public void readFromEmptyListOfDoctors() throws Exception {
+        MockMvc mockMvc = webAppContextSetup(webApplicationContext).build();
+
+        mockMvc.
+                perform(get("/doctors")).
+                andExpect(status().isOk());
     }
 
     @Test
     public void insertNewDoctor() throws Exception {
+
+        MockMvc mockMvc = webAppContextSetup(webApplicationContext).build();
+
+        mockMvc.
+                perform(
+                        post("/doctors").
+                                contentType(MediaType.APPLICATION_JSON).
+                                content("{\"qualification\":\"Dr\", \"specialization\":\"Cancer\"}")).
+                andExpect(status().isCreated());
     }
 }

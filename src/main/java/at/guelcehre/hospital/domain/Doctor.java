@@ -5,12 +5,14 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import at.guelcehre.hospital.Ensure;
 
 @Entity
 @DiscriminatorValue("D")
+@Table(name="doctors")
 public class Doctor extends Person{
 
     @Column(name = "qualification")

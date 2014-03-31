@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -12,6 +13,7 @@ import at.guelcehre.hospital.Ensure;
 
 @Entity
 @DiscriminatorValue("P")
+@Table(name="patients")
 public class Patient extends Person{
     @Column(name = "sickness")
     private String sickness;
